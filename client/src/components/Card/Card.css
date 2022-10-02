@@ -1,0 +1,48 @@
+.card-container{
+    width: 300px;
+    height: 400px;
+}
+
+.img-card{
+    height: 260px;
+    max-width: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 30px;
+}
+
+.card-info{
+    text-align: center;
+}
+
+.card-title{
+    text-transform: uppercase;
+    background: darkslategray;
+    padding: 10px;
+    color: rgb(41, 207, 207);
+    margin-top: 5px;
+    margin: 0px;
+    border-radius: 30px;
+}
+
+.card-rating{
+    margin: 5px;
+    color: rgb(41, 207, 207);
+    background-color: black;
+    padding: 5px;
+    border-radius: 30px;
+}
+
+.card-genres{
+    margin: 5px;
+    color: cornflowerblue;
+    padding-top: 15px;
+}
+
+.genres-text{
+    background-color: darkred;
+    padding-inline: 20px;
+    padding-block: 10px;
+    border-radius:30px;
+    display: block;
+}

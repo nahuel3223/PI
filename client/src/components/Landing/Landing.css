@@ -1,0 +1,42 @@
+body {
+    margin: 0 !important;
+}
+
+.landing-container {
+    margin: 0 !important;
+    padding: 0;
+    height: 100vh;
+    width: 100%;
+}
+
+.landing-fullpage {
+    width: 100%;
+    height: 100%;
+    background: url("../Images/Landing.jpg") no-repeat 50% 50%;
+    background-size: cover;
+    margin: 0;
+    top: 0;
+}
+
+.ingresar {
+    height: 100%;
+    width: 100%;
+    color: transparent;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-1{
+    height: 100px;
+    margin-top: 40%;
+    background-color: transparent;
+    color: rgb(70, 147, 147);
+    font-size: 20px;
+    text-shadow: 2px 2px 5px red;
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+
+a:-webkit-any-link {
+    text-decoration: none;
+}

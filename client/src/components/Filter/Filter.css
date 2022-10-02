@@ -1,0 +1,17 @@
+.select-container{
+    display: inline-flex;
+    margin-inline: 20px;
+    color: rgb(41, 207, 207);
+}
+
+.orders{
+    text-align: center;
+    border-radius: 30px;
+    height: 25px;
+}
+
+.order-genres{
+    text-align: center;
+    border-radius: 30px;
+    height: 25px;
+}

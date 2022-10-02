@@ -1,0 +1,59 @@
+.Navbar{
+    height: 50px;
+    background-color: #3b423d;
+}
+
+.left-side{
+    display: inline-flex;
+    justify-content: start;
+    align-items: center;
+    height: 50px;
+}
+
+.nav-a{
+    margin-left: 30px;
+    margin-right: 30px;
+    padding: 10px;
+    font-size: 20px;
+    color: rgb(41, 207, 207);
+}
+
+.nav-a:hover{
+    background-color: darkslategrey;
+}
+
+
+.right-side{
+    display: inline-flex;
+    justify-content: flex-end;
+    height: 50px;
+    float: right;
+}
+
+.search-form{
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.search-text{
+    border-radius: 30px;
+}
+
+.search-text::placeholder{
+    margin-right: 5px;
+}
+
+.button-search{
+    height: 30px;
+    width: 100px;
+    margin-right: 50px;
+    margin-left: 50px;
+    margin-top: 0px;
+    align-items: center;
+    color: aqua;
+    background-color: darkslategrey;
+    border-radius: 30px;
+    text-shadow: 2px 2px 5px red;
+    font-family: "Lucida Console", "Courier New", monospace;
+}

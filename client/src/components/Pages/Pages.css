@@ -1,0 +1,10 @@
+.btnPagination{
+    margin-inline: 10px;
+    border-radius: 30px;
+    padding: 5px;
+    padding-inline: 10px;
+    color: rgb(41, 207, 207);
+    background-color: #3b423d;
+    text-shadow: 2px 2px 5px red;
+    font-family: "Lucida Console", "Courier New", monospace;
+}

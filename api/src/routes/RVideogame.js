@@ -15,7 +15,8 @@ router.get("/:id", async (req, res)=>{
         const { id } = req.params;
 
         if (!validate(id)){
-            let apiGame = (await axios.get(URL+`${req.params.id}`+apiKey)).data;
+            try {
+                let apiGame = (await axios.get(URL+`${req.params.id}`+apiKey)).data;
 
             const { id, background_image, name, genres, description_raw, released, rating, platforms } = apiGame;
             const platformsNames = (platforms.map((p) => p.platform.name)).join(", ");
@@ -31,28 +32,25 @@ router.get("/:id", async (req, res)=>{
                 platforms: platformsNames,
             }
             res.send(gameFinal)
+            } catch (error) {
+                res.send("El id solicitado no existe")
+            }
+            
 
         } else if(validate(id)){
-            const videogameDb = await Videogame.findByPk(id, {
+            try {
+                const videogameDb = await Videogame.findByPk(id, {
                 include: Genre,
             });
 
-            // const { id, name, image, description, releaseDate, rating, platforms, Genres } = videogameDb;
-            // const fixedDate = releaseDate.toLocaleDateString();
-            // const platformsNames = platforms.map((p) => p.platform.name).join(", ")
-
-            // const gameMapped = {
-            //     id: id,
-            //     name: name,
-            //     image: image,
-            //     genres: Genres.map((r) => r.name),
-            //     description: description,
-            //     released: fixedDate,
-            //     rating: Math.round(rating),
-            //     platforms: platformsNames, 
-            // }
-
-            res.send(videogameDb)
+            if(videogameDb.length == 0){
+                res.send("El id solicitado no existe")
+            }else{
+                res.send(videogameDb)
+            }
+            } catch (error) {
+                res.send(error)
+            }
         }
     } catch (error) {
         res.send(error)
