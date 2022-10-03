@@ -18,20 +18,20 @@ router.get("/:id", async (req, res)=>{
             try {
                 let apiGame = (await axios.get(URL+`${req.params.id}`+apiKey)).data;
 
-            const { id, background_image, name, genres, description_raw, released, rating, platforms } = apiGame;
-            const platformsNames = (platforms.map((p) => p.platform.name)).join(", ");
+                const { id, background_image, name, genres, description_raw, released, rating, platforms } = apiGame;
+                const platformsNames = (platforms.map((p) => p.platform.name)).join(", ");
 
-            const gameFinal = {
-                id: id,
-                name: name,
-                image: background_image,
-                genres: genres.map((g) => g.name),
-                description: description_raw,
-                released: released,
-                rating: Math.round(rating),
-                platforms: platformsNames,
-            }
-            res.send(gameFinal)
+                const gameFinal = {
+                    id: id,
+                    name: name,
+                    image: background_image,
+                    genres: genres.map((g) => g.name),
+                    description: description_raw,
+                    released: released,
+                    rating: Math.round(rating),
+                    platforms: platformsNames,
+                }
+                res.send(gameFinal)
             } catch (error) {
                 res.send("El id solicitado no existe")
             }
@@ -39,15 +39,30 @@ router.get("/:id", async (req, res)=>{
 
         } else if(validate(id)){
             try {
-                const videogameDb = await Videogame.findByPk(id, {
-                include: Genre,
-            });
 
-            if(videogameDb.length == 0){
-                res.send("El id solicitado no existe")
-            }else{
-                res.send(videogameDb)
-            }
+                let responseDb = await Videogame.findAll({
+                    where: { id: id },
+                    include: Genre
+                });
+        
+                let dbFound = responseDb.map((g)=>{
+                    return{
+                        id: g.id,
+                        name:g.name,
+                        description: g.description,
+                        released: g.releaseDate,
+                        rating: g.rating,
+                        platforms: g.platforms,
+                        image: g.image,
+                        genres: g.Genres.map((g)=> g.name),
+                    }
+                })
+
+                if(responseDb.length == 0){
+                    res.send("El id solicitado no existe")
+                }else{
+                    res.send(dbFound[0])
+                }
             } catch (error) {
                 res.send(error)
             }

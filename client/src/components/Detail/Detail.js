@@ -9,11 +9,11 @@ export default function Detail(props){
     const id = props.match.params.id;
 
     const dispatch = useDispatch();
-  
+
     const videogame = useSelector((state) => state.videogame);
-  
+
     useEffect(() => {
-      dispatch(getGamesById(id));
+        dispatch(getGamesById(id));
     }, [dispatch, id]);
 
     return (
@@ -28,7 +28,7 @@ export default function Detail(props){
                             <h1>{videogame.name}</h1>
                             <h3>Fecha de Lanzamiento:</h3>
                             <p> {videogame.released}</p>
-                            <h3>Genero/s:</h3>
+                            <h3>Genero:</h3>
                             <p>{videogame.genres?.join(" - ")}</p>
                             <h3>Plataformas:</h3>
                             <p>{videogame.platforms}</p>

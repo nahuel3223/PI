@@ -32,7 +32,7 @@ export default function Nav(){
                 <div className="nav-links">
                     <a className="nav-a" href="/">INICIO</a>
                     <a className="nav-a" href="/home">JUEGOS</a>
-                    <a className="nav-a" href="/addgame">AGREGAR JUEGO</a>
+                    <a className="nav-a" href="/addvideogame">AGREGAR JUEGO</a>
                 </div>
             </div>
             <div className="right-side">

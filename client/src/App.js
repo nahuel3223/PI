@@ -3,7 +3,8 @@ import './App.css';
 import { Route } from "react-router-dom";
 import Landing from './components/Landing/Landing.js';
 import Home from './components/Home/Home.js'
-import Detail from "./components/Detail/Detail"
+import Detail from "./components/Detail/Detail.js"
+import AddVideogame from "./components/AddVideogame/AddVideogame.js"
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <Route exact path="/" component={Landing} />
         <Route exact path="/home" component={Home} />
         <Route exact path="/videogame/:id" component={Detail}/>
+        <Route exact path="/addvideogame" component={AddVideogame}/>
       </Fragment>
     </div>
   );

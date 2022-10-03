@@ -12,7 +12,7 @@
 }
 
 .div-img{
-    margin: 25px;
+    margin: 40px;
 }
 
 .img-detail{
@@ -43,6 +43,7 @@
 
 .info p{
     color: firebrick;
+    width: 500px;
 }
 
 .description-text{

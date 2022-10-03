@@ -52,8 +52,21 @@ router.get('/', async (req, res)=>{
             include: Genre
         });
 
+        let dbFound = responseDb.map((g)=>{
+            return{
+                id: g.id,
+                name:g.name,
+                description: g.description,
+                releaseDate: g.releaseDate,
+                rating: g.rating,
+                platforms: g.platforms,
+                image: g.image,
+                genres: g.Genres.map((g)=> g.name),
+            }
+        })
+
         let responseAPI = (await axios.get(`${URL + apiKey}`)).data;
-        let allGames =  [...responseDb]
+        let allGames =  [...dbFound]
     
         while(responseAPI.next.slice(-1) <= 6){
         let gamesApi = responseAPI.results.map(g => {
@@ -63,7 +76,7 @@ router.get('/', async (req, res)=>{
                 image: g.background_image,
                 rating: g.rating,
                 platforms: (g.platforms.map((p) => p.platform.name)).join(", "),
-                genres: g.genres.map(g => g.name),
+                genres: g.genres.map((g) => g.name),
             }
         })
 
@@ -106,7 +119,12 @@ router.post('/', async (req, res)=>{
         })
 
         await newGame.addGenre(findIdDb);
-        res.status(200).send(newGame);
+
+        let videogameDb = await Videogame.findByPk(newGame.id, {
+            include: Genre,
+            });
+
+        res.status(200).send(videogameDb);
     } catch (error) {
         res.send(error)
     }
