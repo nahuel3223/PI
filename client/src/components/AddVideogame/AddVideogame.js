@@ -145,7 +145,7 @@ export default function AddVideogame(){
                         </div>
                     </div>
                     <div className="extra-text">
-                        Mantener tecla CTRL para seleccionar multiples generos
+                        Presionar tecla CTRL para seleccionar multiples generos
                     </div>
 
                     <div className="input-field">
@@ -158,7 +158,7 @@ export default function AddVideogame(){
                             </select> 
                         </div>
                     </div>
-                    <div className="extra-text">Mantener tecla CTRL para seleccionar multiples plataformas</div>
+                    <div className="extra-text">Presionar tecla CTRL para seleccionar multiples plataformas</div>
                         <div className="input-field">
                             <button className="button-add" type="submit">
                                 <span>Agregar</span>
