@@ -21,7 +21,7 @@ export default function AddVideogame(){
     const dispatch = useDispatch();
     const genresState = useSelector((store) => store.genres);
     const platformsArray = [' PC',' iOS',' Android',' macOS',' PlayStation 4','  PlayStation 5',' XBOX',' PS Vita']
-    let tempoPlat = [];
+    let selectedPlat = [];
 
     useEffect(() => {
         dispatch(getGamesGenre());
@@ -44,12 +44,12 @@ export default function AddVideogame(){
     }
 
     const handlePlatforms = (e) => {
-        tempoPlat = Array.from(e.target.selectedOptions).map((p) =>{
+        selectedPlat = Array.from(e.target.selectedOptions).map((p) =>{
             return p.value
         })
         setInput({
             ...input,
-            [e.target.name]:tempoPlat.toString()
+            [e.target.name]:selectedPlat.toString()
         });
     };
 

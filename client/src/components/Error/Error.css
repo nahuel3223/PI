@@ -33,7 +33,6 @@ body {
     background-color: transparent;
     color: rgb(70, 147, 147);
     font-size: 20px;
-    text-align: center;
     text-shadow: 2px 2px 5px red;
     font-family: "Lucida Console", "Courier New", monospace;
 }
