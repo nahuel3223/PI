@@ -45,7 +45,7 @@ export default function AddVideogame(){
 
     const handlePlatforms = (e) => {
         tempoPlat = Array.from(e.target.selectedOptions).map((p) =>{
-            return p.value 
+            return p.value
         })
         setInput({
             ...input,
@@ -155,12 +155,12 @@ export default function AddVideogame(){
                                 {platformsArray.map((p) => {
                                     return <option key={p.id} value={p}> {p} </option>;
                                 })}
-                            </select>
+                            </select> 
                         </div>
                     </div>
                     <div className="extra-text">Mantener tecla CTRL para seleccionar multiples plataformas</div>
                         <div className="input-field">
-                            <button className="input" type="submit">
+                            <button className="button-add" type="submit">
                                 <span>Agregar</span>
                             </button>
                         </div>
