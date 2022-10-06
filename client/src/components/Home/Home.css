@@ -15,6 +15,25 @@ body {
     font-family: "Lucida Console", "Courier New", monospace;
 }
 
+.cargando{
+    font-size: 80px;
+    text-align: center;
+    margin-top: 20%;
+    animation: myAnim 3s linear 0ms infinite normal forwards;
+}
+@keyframes myAnim {
+	0%,
+	50%,
+	100% {
+		opacity: 1;
+	}
+
+	25%,
+	75% {
+		opacity: 0;
+	}
+}
+
 .order-bar{
     display: flow-root;
 }

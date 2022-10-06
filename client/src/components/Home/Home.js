@@ -39,35 +39,44 @@ export default function Home(){
     
     let max = Math.ceil(posts.length / 15);
 
-    return(
-        <div className="home-fullpage">
-            <Nav/>
-            <div className="order-bar">
-                <div className="pages">
-                    <Pages
-                    currentPage={actualPage}
-                    setCurrentPage={setActualPage}
-                    maxPages={max}
-                    />
-                </div>
-                <div className="filter">
-                    <Filter/>
-                </div>
+    if(videogames.length === 0){
+        return(
+            <div className="home-fullpage">
+                <Nav/>
+                <h2 className="cargando">Cargando juegos...</h2>
             </div>
-            <div className="home-card">
-                {currentPosts.map((game) => (
-                    <div className="cards-container" key={game.id}>
-                        <Link to={`/videogame/${game.id}`} className="link-card">
-                            <Card
-                            name={game.name}
-                            image={game.image}
-                            genres={game.genres}
-                            rating={game.rating}
-                            />
-                        </Link>
+        )
+    }else{
+        return(
+            <div className="home-fullpage">
+                <Nav/>
+                <div className="order-bar">
+                    <div className="pages">
+                        <Pages
+                        currentPage={actualPage}
+                        setCurrentPage={setActualPage}
+                        maxPages={max}
+                        />
                     </div>
-                ))}
+                    <div className="filter">
+                        <Filter/>
+                    </div>
+                </div>
+                <div className="home-card">
+                    {currentPosts.map((game) => (
+                        <div className="cards-container" key={game.id}>
+                            <Link to={`/videogame/${game.id}`} className="link-card">
+                                <Card
+                                name={game.name}
+                                image={game.image}
+                                genres={game.genres}
+                                rating={game.rating}
+                                />
+                            </Link>
+                        </div>
+                    ))}
+                </div>
             </div>
-        </div>
-    )
+        )
+    }
 }

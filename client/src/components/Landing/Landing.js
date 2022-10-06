@@ -2,14 +2,13 @@ import { React, useEffect} from "react";
 import { Link } from "react-router-dom"
 import { useDispatch } from "react-redux"
 import "./Landing.css"
-import { getAllVideogames, getGamesGenre } from "../../actions";
+import { getGamesGenre } from "../../actions";
 
 export default function Landing(){
 
     const dispatch = useDispatch()
 
     useEffect(() => {
-        dispatch(getAllVideogames())
         dispatch(getGamesGenre())
     });
 

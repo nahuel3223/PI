@@ -124,6 +124,8 @@ function rootReducer(state = initialState, action) {
                             filteredGames: state.videogames,
                             orderedBy: action.payload,
                         };
+                    default:
+                        return state
             }
         default: 
             return state;
