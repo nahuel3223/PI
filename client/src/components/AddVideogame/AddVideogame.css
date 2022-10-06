@@ -55,3 +55,7 @@ h3{
 .input{
 border-radius: 15px;
 }
+
+.error{
+    color: red;
+}

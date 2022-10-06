@@ -5,7 +5,8 @@ const URL = 'https://api.rawg.io/api/genres';
 const router = Router();
 const {YOUR_API_KEY} = process.env;
 const apiKey = `?key=${YOUR_API_KEY}`
-const { Videogame, Genre } = require("../db.js")
+const { Genre } = require("../db")
+//const genresjson = require("../json/videogames-genres.json");
 
 router.get('/', async (req, res)=>{
         try {

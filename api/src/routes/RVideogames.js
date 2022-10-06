@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const axios = require('axios')
-//require('dotenv').config()
+require('dotenv').config()
 const URL = 'https://api.rawg.io/api/games';
 const router = Router();
 const {YOUR_API_KEY} = process.env;
