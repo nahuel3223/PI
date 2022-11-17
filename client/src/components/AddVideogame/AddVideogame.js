@@ -179,7 +179,7 @@ export default function AddVideogame(){
                         <label>Titulo</label>
                         <input
                         placeholder="Titulo del juego..."
-                        className="input"
+                        className="inputAdd"
                         type="text"
                         name="name"
                         onChange={validateName}
@@ -205,7 +205,7 @@ export default function AddVideogame(){
                     <div className="input-field">
                         <label>Fecha de Lanzamiento</label>
                         <input
-                        className="input"
+                        className="inputAdd"
                         type="date"
                         name="releaseDate"
                         onChange={validateDate}
@@ -218,7 +218,7 @@ export default function AddVideogame(){
                     <div className="input-field">
                         <label>Imagen</label>
                         <input
-                        className="input"
+                        className="inputAdd"
                         placeholder="URL de imagen..."
                         type="text"
                         name="image"
@@ -232,7 +232,7 @@ export default function AddVideogame(){
                     <div className="input-field">
                         <label>Puntuacion (0-5)</label>
                         <input
-                        className="input"
+                        className="inputAdd"
                         type="number"
                         name="rating"
                         onChange={validateRating}
@@ -246,6 +246,7 @@ export default function AddVideogame(){
                         <label> Genero </label>
                         <div className="custom-select">
                             <select
+                            className="inputSelect"
                                 name="genres"
                                 multiple="multiple"
                                 onChange={validateGenres}
@@ -266,6 +267,7 @@ export default function AddVideogame(){
                         <label> Plataformas </label>
                         <div className="custom-select">
                             <select 
+                            className="inputSelect"
                             name="platforms" 
                             multiple="multiple" 
                             onChange={validatePlatform}

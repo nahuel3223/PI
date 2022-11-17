@@ -9,14 +9,14 @@ const { Videogame, Genre } = require("../db.js")
 var validate = require("uuid-validate");
 
 
-router.get("/:id", async (req, res)=>{
-
+router.get("/", async (req, res)=>{
+const { id } = req.query;
     try {
-        const { id } = req.params;
+        
 
         if (!validate(id)){
             try {
-                let apiGame = (await axios.get(URL+`${req.params.id}`+apiKey)).data;
+                let apiGame = (await axios.get(URL+`${req.query.id}`+apiKey)).data;
 
                 const { id, background_image, name, genres, description_raw, released, rating, platforms } = apiGame;
                 const platformsNames = (platforms.map((p) => p.platform.name)).join(", ");
